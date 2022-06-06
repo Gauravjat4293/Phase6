@@ -1,0 +1,99 @@
+<section class="vh-50" style=" background-color: #eee;">
+    <div class="container-fluid h-custom" >
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-md-9 col-lg-6 col-xl-5">
+          <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
+            class="img-fluid" alt="Sample image">
+        </div>
+        <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1" style="margin-top: 5%;">
+            <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign in</p>
+         
+            <form [formGroup]="loginForm" (ngSubmit)="onFormSubmit()">
+            
+            <!-- Username input -->
+            <div class="form-outline mb-4">
+                <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && fval.username.errors }" placeholder="Enter Username"/>
+              <label class="form-label" for="username">Username</label>
+                
+                <div *ngIf="submitted && fval.username.errors" class="invalid-feedback">
+                     <div *ngIf="fval.username.errors.required">Username is required</div>
+                </div>
+            </div>
+  
+            <!-- Password input -->
+            <div class="form-outline mb-3">
+              <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && fval.password.errors }" placeholder="Enter password here" />
+              <label class="form-label" for="password">Password</label>
+              <div *ngIf="submitted && fval.password.errors" class="invalid-feedback">
+                <div *ngIf="fval.password.errors.required">Please enter a Password</div>
+            </div>
+            </div>
+  
+            <div class="d-flex justify-content-between align-items-center">
+              <!-- Checkbox -->
+              <div class="form-check mb-0">
+                <input class="form-check-input me-2" type="checkbox" value="" id="Remember" />
+                <label class="form-check-label" for="Remember">
+                  Remember me
+                </label>
+              </div>
+              <a href="#!" class="text-body">Forgot password?</a>
+            </div>
+  
+            <div class="text-center text-lg-start mt-4 pt-2">
+              <button type="submit" class="btn btn-primary submit btn-lg" value="submit"
+                style="padding-left: 2.5rem; padding-right: 2.5rem; margin-bottom: 13%;">Login</button>
+  
+            </div>
+
+            <div class="form-group pb-5" style="margin-bottom: 10%;">
+                <p class="text-center">Don't have an account? <a routerLink="/register" class="btn btn-primary">Register here</a></p>  
+             </div>
+  
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+<app-footer></app-footer>
+
+
+
+<!-- <div class="container">
+    <form [formGroup]="loginForm" (ngSubmit)="onFormSubmit()">
+        <br>
+        <br>
+        <h1 style="text-align: center; font-family: serif;">User Portal</h1>
+        <br>
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && fval.username.errors }" placeholder="Enter Username"/>
+            <div *ngIf="submitted && fval.username.errors" class="invalid-feedback">
+                <div *ngIf="fval.username.errors.required">Username is required</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && fval.password.errors }" placeholder="Enter password here" />
+            <div *ngIf="submitted && fval.password.errors" class="invalid-feedback">
+                <div *ngIf="fval.password.errors.required">Please enter a Password</div>
+            </div>
+        </div>
+    
+        
+    
+        <div class="form-group" style="text-align:center;">
+            <button [disabled]="loading" class="btn btn-primary">
+                <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                Login
+            </button>
+        </div>
+    
+        <div class="form-group mt-5">
+            <p class="text">Don't have an account? <a routerLink="/register" class="btn btn-primary">Register here</a></p>  
+         </div>
+    </form>
+    </div>
+     -->

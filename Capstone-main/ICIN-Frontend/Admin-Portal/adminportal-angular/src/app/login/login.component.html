@@ -1,0 +1,65 @@
+
+<section class="vh-100" style=" background-color: #eee;">
+  <div class="container-fluid h-custom" >
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-md-9 col-lg-6 col-xl-5" style="margin-top: 10%;">
+        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.svg"
+          class="img-fluid" alt="Sample image">
+      </div>
+      <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1" style="margin-top: 10%;">
+          <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Admin</p>
+       
+          <form class="form-login" (ngSubmit)="onSubmit(loginForm)"  #loginForm="ngForm">
+          
+          <!-- Username input -->
+          <div class="form-outline mb-4">
+          <input type="text" id="inputUserName" name="inputUserName" class="form-control"  [ngClass]="{ 'is-invalid': submitted && inputUserName.errors }" ngModel placeholder="Username" required autofocus #inputUserName= ngModel>
+            <div *ngIf="submitted && inputUserName.errors" class="invalid-feedback">
+              <span *ngIf="inputUserName.errors.required">Please enter a Username</span>
+            </div>
+          </div>
+
+
+          <!-- Password input -->
+          <div class="form-outline mb-3">
+            <input type="password" id="inputPassword" name="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && password.errors }" ngModel placeholder="Password" required #password=ngModel>
+            <div *ngIf="submitted && password.errors" class="invalid-feedback">
+              <span *ngIf="password.errors.required">Please enter a Password</span>
+            </div>
+          </div>
+
+          <div class="text-center text-lg-start mt-4 pt-2">
+            <button type="submit" class="btn btn-primary submit btn-lg" value="submit"
+              style="padding-left: 2.5rem; padding-right: 2.5rem; margin-bottom: 13%;">Login</button>
+
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- 
+<div class="container">
+  <h1 class="text-center" style="font-family: serif;">Admin Portal</h1>
+  <form class="form-login" (ngSubmit)="onSubmit(loginForm)"  #loginForm="ngForm">
+      
+      <label for="inputUserName" class="sr-only">UserName</label>
+      <input type="text" id="inputUserName" name="inputUserName" class="form-control"  [ngClass]="{ 'is-invalid': submitted && inputUserName.errors }" ngModel placeholder="UserName" required autofocus #inputUserName= ngModel>
+      <div *ngIf="submitted && inputUserName.errors" class="invalid-feedback">
+        <span *ngIf="inputUserName.errors.required">Please enter a Username</span>
+      </div>
+      
+      
+      <label for="inputPassword" class="sr-only">Password</label>
+      <input type="password" id="inputPassword" name="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && password.errors }" ngModel placeholder="Password" required #password=ngModel>
+      <div *ngIf="submitted && password.errors" class="invalid-feedback">
+        <span *ngIf="password.errors.required">Please enter a Password</span>
+      </div>
+  
+      <br>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
+    </form>
+  </div> -->
